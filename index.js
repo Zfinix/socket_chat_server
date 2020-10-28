@@ -34,7 +34,8 @@ io.on('connection', function (client) {
   })
 })
 
-server.listen(3000, function (err) {
+var server_port = process.env.PORT || 3000;
+server.listen(server_port, function (err) {
   if (err) throw err
-  console.log('listening on port 3000')
-})
+  console.log('Listening on port %d', server_port);
+});
